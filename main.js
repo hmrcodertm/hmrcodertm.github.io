@@ -511,7 +511,7 @@ var ManageappointmentComponent = /** @class */ (function () {
             _this.appointment = data;
             var _loop_1 = function (x) {
                 _this.APPS.getAppointmentRegister(x).subscribe(function (data2) {
-                    data2['approx_time'] = new Date(data2['approx_time'].slice(0, data2['approx_time'].length - 1));
+                    data2['approx_time'] = new Date(data2['approx_time'].slice(0, data2['approx_time'].length - 2));
                     _this.appointmentRegisterList.push(data2);
                     if (data['registered_users'].indexOf(x) == data['registered_users'].length - 1) {
                         _this.appointmentRegisterList.sort(function (a, b) {
@@ -586,7 +586,7 @@ var ManageappointmentComponent = /** @class */ (function () {
             .set("time_paused", this.time_paused + ""), {
             headers: this.LS.getHeaders()
         }).subscribe(function (data) {
-            console.log(data);
+            window.location.reload();
         });
     };
     ManageappointmentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1000,7 +1000,7 @@ var LoginService = /** @class */ (function () {
         this.after_verify = [];
         //refresh childs
         this.child_elements = [];
-        //this.serverurl="http://localhost:8000/";
+        this.serverurl = "http://localhost:8000/";
         // check if user details present or not
         var token = localStorage.getItem('auth_token');
         //user = localStorage.getItem('auth_user');

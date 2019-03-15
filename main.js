@@ -44,6 +44,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
     { path: 'appointment/:id', component: _appointment_manageappointment_manageappointment_component__WEBPACK_IMPORTED_MODULE_4__["ManageappointmentComponent"] },
 ];
@@ -70,7 +71,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-info fixed-top\">\n  <a class=\"navbar-brand\">#B</a>\n  <button class=\"navbar-toggler\" data-target=\"#my-nav\" data-toggle=\"collapse\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div id=\"my-nav\" class=\"collapse navbar-collapse\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item \">\n        <a class=\"nav-link\" routerLink=\"home\" ><i class=\"fas fa-home\"> Home</i></a>\n      </li>\n      <li class=\"nav-item \">\n          <a class=\"nav-link\" routerLink=\"appointments\" ><i class=\"fas fa-home\"> Appointments</i></a>\n        </li>\n    </ul>\n\n    <ul class=\"navbar-nav\">\n      <app-account [show]=\"'icon'\"></app-account>\n    </ul>\n  </div>\n</nav>\n<br>\n<br>\n<br>\n<router-outlet></router-outlet>\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-info fixed-top\">\n  <a class=\"navbar-brand\">#B</a>\n  <button class=\"navbar-toggler\" data-target=\"#my-nav\" data-toggle=\"collapse\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div id=\"my-nav\" class=\"collapse navbar-collapse\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item \">\n        <a class=\"nav-link\" routerLink=\"home\" ><i class=\"fas fa-home\"> Home</i></a>\n      </li>\n      <!--li class=\"nav-item \">\n          <a class=\"nav-link\" routerLink=\"appointments\" ><i class=\"fas fa-home\"> Appointments</i></a>\n        </li-->\n    </ul>\n\n    <ul class=\"navbar-nav\">\n      <app-account [show]=\"'icon'\"></app-account>\n    </ul>\n  </div>\n</nav>\n<br>\n<br>\n<br>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -681,7 +682,7 @@ var SearchappointmentComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ng-container *ngIf=\"!LS.islogged\">\r\n    <h1>U must be logged in to continue</h1>\r\n</ng-container>\r\n<ng-container *ngIf=\"LS.islogged\">\r\n    <div class=\"row card-body\">\r\n        <div class=\"col-md-4\">\r\n            <app-searchappointment></app-searchappointment>\r\n        </div>\r\n        <div class=\"col-md-8\">\r\n            <app-createappointment></app-createappointment>\r\n\r\n\r\n            <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    My active appointments\r\n                </div>\r\n\r\n                <div class=\"card-body\">\r\n                    <div class=\"input-group\">\r\n                        <h5 class=\"text-danger\">You dont have any active appointments</h5>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n</ng-container>"
+module.exports = "<ng-container *ngIf=\"!LS.islogged\">\r\n    <h1>U must be logged in to continue</h1>\r\n</ng-container>\r\n<ng-container *ngIf=\"LS.islogged\">\r\n    <div class=\"row card-body\">\r\n        <div class=\"col-md-4\">\r\n            <app-searchappointment></app-searchappointment>\r\n        </div>\r\n        <div class=\"col-md-8\">\r\n            <app-createappointment></app-createappointment>\r\n\r\n\r\n            <div class=\"card\">\r\n                <div class=\"card-header\">\r\n                    My created appointments\r\n                </div>\r\n\r\n                <div class=\"card-body\">\r\n                    <div class=\"input-group\">\r\n                        \r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n</ng-container>"
 
 /***/ }),
 
@@ -1000,7 +1001,7 @@ var LoginService = /** @class */ (function () {
         this.after_verify = [];
         //refresh childs
         this.child_elements = [];
-        this.serverurl = "http://localhost:8000/";
+        //this.serverurl="http://localhost:8000/";
         // check if user details present or not
         var token = localStorage.getItem('auth_token');
         //user = localStorage.getItem('auth_user');
